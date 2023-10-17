@@ -38,8 +38,9 @@ The script performs the following steps
 
 ### File Structure
 
-- doctor_scraper.py: The Python script for scraping doctor information.
+- main.py: The Python script for scraping doctor information.
 - readme.md: This file, providing information about the script.
+-  index.html: Avoid it 
 
 ### Author
 - Md. Sagar Ali
