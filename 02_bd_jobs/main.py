@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import time, os
 
 def find_job_from_bdjob():
-    get_url = requests.get('https://jobs.bdjobs.com/jobsearch.asp?fcatId=15&icatId=').text
+    get_url = requests.get('https://jobs.bdjobs.com/jobsearch.asp?fcatId=8&icatId=').text
     
     soup = BeautifulSoup(get_url, 'lxml')
     
@@ -12,10 +12,17 @@ def find_job_from_bdjob():
     for index, job in enumerate(jobs):
         job_n = job.find('div', class_ ="job-title-text").a.text.replace(' ','')
         company_n = job.find('div', class_ = 'comp-name-text').text.replace(' ','')
-        education = job.ul.li.text
+        education_matched = job.ul
         location = job.find('div', class_ = "locon-text-d").text.replace(' ','')
         experience = job.find('div', class_ = "exp-text-d").text
         last_date = job.find('div', class_ = "dead-text-d").strong.text
+        
+        print(education_matched)
+        
+        if education_matched:
+            education = education_matched.li.text
+        else:
+            education = "Not Spacified"
         
         print(f"""
             Job Name : {job_n.strip()} \n
