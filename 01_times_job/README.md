@@ -30,6 +30,12 @@ The script performs the following steps:
 - main3.py: The Python script for filtering job listings.
 - readme.md: This file, providing information about the script.
 
+### Avoid File
+- index.html
+- main.py
+- main2.py
+- practice.py
+
 ### Author
 - Md. Sagar Ali
 
